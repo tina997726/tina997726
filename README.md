@@ -1,6 +1,6 @@
 # tina997726
 bootstrap模板:https://colorlib.com/preview/#me  
-##設計:  
+## 設計:  
 1.更改子標題 --Home/About/Blogs/Activities/Projects/Contact  
   (巧思:中間寫著ME--機械系的簡稱+我的意思!且加上可以回首頁的超連結 )  
 **Home**   
