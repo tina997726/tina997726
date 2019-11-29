@@ -1,7 +1,7 @@
 # tina997726
 bootstrap模板:https://colorlib.com/preview/#me
-設計:
-1.更改子標題 --Home/About/Blogs/Activities/Projects/Contact
+>設計:
+>1.更改子標題 --Home/About/Blogs/Activities/Projects/Contact
   (巧思:中間寫著ME--機械系的簡稱+我的意思!且加上可以回首頁的超連結)
 Home
 2.更改大標題--I'm YA-Ting HSU+I'm A Freshman In Department Of Mechanical Engineering
