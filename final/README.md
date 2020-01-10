@@ -1,4 +1,4 @@
-#期末專題主題:Hangman  
+**期末專題主題:Hangman**    
 **簡介:**  
 hangman應該算是大家小時候都玩過的遊戲  
 不過因為我覺得單只有猜英文有點無聊，所以改成了關於節慶/行星/星座主題的版本  
@@ -15,12 +15,21 @@ hangman應該算是大家小時候都玩過的遊戲
 只是我css用很多就是了(調配色調很久XD)     
 然後有放了我很喜歡的圖當背景   
 不過js跟java的部分的確花了很多時間，所以會著重這部分介紹      
-**1.** 宣告`word = ["Word name", "Hint"]`並把資料庫的單字跟提示都打上去     
-**2.** 設置鍵盤`var tastatur = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"`  
+**1.** 宣告
+```js
+word = ["Word name", "Hint"]
+```
+並把資料庫的單字跟提示都打上去     
+**2.** 設置鍵盤
+```js
+var tastatur = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+```
 **3.** 宣告會用到的變數  
-`var select = 0  
+```js
+var select = 0  
 var wordLeft = []  
-var fail = 0`  
+var fail = 0
+```
 **4.** 確定onload再執行  
  ```js 
  window.onload = function() {  
@@ -37,17 +46,21 @@ var fail = 0`
         eL.style.bottom = resY + "px"       
     }, false)  
     createTastur()  
-} ```    
+} 
+```    
 **5.**  設定function 分別是【startgame】【newgame】【clearTastatur】跟【clearPlayer】  
 (詳細code請直接開檔案)  
 不過關於【clearPlayer】用了不錯的方式(如下舉例)  
-   ` gId("g0").setAttribute("data", "false")`  
+   ```js
+   gId("g0").setAttribute("data", "false")
+   ```
 **6.** 設定隨機抓單字，然後顯示相對應的底線數在紫色框框裡  
 function 【createWord】  
 **7.** 設定鍵盤   
 function 【createTastur】    
 **8.** game check!  
-`function bTas(a) {  
+```js
+function bTas(a) {  
     if (a.getAttribute("data") == "") {  
         var x = isExist(a.innerText)  
         a.setAttribute("data", x)  
@@ -59,9 +72,11 @@ function 【createTastur】
             showNextFail()  
         }  
     }  
-}`  
+}
+```
 **8.** 設定鍵盤猜單字對跟錯之後的結果   
-`function isExist(e) {  
+```js
+function isExist(e) {  
     e = e.toUpperCase()  
     var x = wordLeft.indexOf(e)  
     if (x != -1) {  
@@ -70,11 +85,13 @@ function 【createTastur】
         return true  
     }  
     return false  
-}`  
+}
+```
 **9.** Show next fail drawing   
 function 【showNextFail】    
 **10.** game result    
-`function gameEnd(e) {  
+```js
+function gameEnd(e) {  
     var d = gId("result")  
     d.setAttribute("data", e)  
     if (e) {
@@ -85,16 +102,21 @@ function 【showNextFail】
         gId("rM").innerHTML = "The word was <br/><br/>\"" + word[select][0].toUpperCase() + "\"<br/><br/>多背書好嗎"  
     }  
     d.className = ""  
-}`  
+}
+```
 **11.** about hint!    
 **【hint】**   
-`function hint() {  
+```js
+function hint() {  
     gId("hintText").innerText = word[select][1]  
     gId("hint").style.display = "block"  
-}`  
+}
+```
 **【Exit hint】**   
-`function hintExit() {  
+```js
+function hintExit() {  
     gId("hint").style.display = "none"  
-}`   
+}
+```
 **辛苦助教了~~ **   
 **-------------------------------------END---------------------------------------------**  
