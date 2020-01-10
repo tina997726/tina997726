@@ -22,80 +22,78 @@ hangman應該算是大家小時候都玩過的遊戲
 var wordLeft = []  
 var fail = 0`  
 **4.** 確定onload再執行  
-`window.onload = function() {
-    gId("moveKeybord").addEventListener('touchmove', function(e) {
-        wH = window.innerHeight
-        tY = e.touches[0].clientY
-        eL = gId("tastatur")
-        resY = wH - tY - eL.offsetHeight
-        if (resY < 0) {
-            resY = 0
-        } else if (resY > wH / 2) {
-            resY = wH / 2
-        }
-        eL.style.bottom = resY + "px"   
-    }, false)
-    createTastur()
-}`  
-**5.** 設定function 分別是【startgame】【newgame】【clearTastatur】跟【clearPlayer】  
+`window.onload = function() {  
+    gId("moveKeybord").addEventListener('touchmove', function(e) {  
+        wH = window.innerHeight  
+        tY = e.touches[0].clientY  
+        eL = gId("tastatur")  
+        resY = wH - tY - eL.offsetHeight  
+        if (resY < 0) {  
+            resY = 0  
+        } else if (resY > wH / 2) {  
+            resY = wH / 2  
+        } 
+        eL.style.bottom = resY + "px"       
+    }, false)  
+    createTastur()  
+}`    
+**5.**  設定function 分別是【startgame】【newgame】【clearTastatur】跟【clearPlayer】  
 (詳細code請直接開檔案)  
 不過關於【clearPlayer】用了不錯的方式(如下舉例)  
    ` gId("g0").setAttribute("data", "false")`  
 **6.** 設定隨機抓單字，然後顯示相對應的底線數在紫色框框裡  
 function 【createWord】  
-**7.** 設定鍵盤  
-function 【createTastur】  
+**7.** 設定鍵盤   
+function 【createTastur】    
 **8.** game check!  
-`function bTas(a) {
-    if (a.getAttribute("data") == "") {
-        var x = isExist(a.innerText)
-        a.setAttribute("data", x)
-        if (x) {
-            if (wordLeft.length == 0) {
-                gameEnd(true)
-            }
-        } else {
-            showNextFail()
-        }
-    }
-}`
-**8.** 設定鍵盤猜單字對跟錯之後的結果  
-`function isExist(e) {
-    e = e.toUpperCase()
-    var x = wordLeft.indexOf(e)
-    if (x != -1) {
-        wordLeft.splice(x, 1)
-        typeWord(e)
-        return true
-    }
-    return false
-}`
+`function bTas(a) {  
+    if (a.getAttribute("data") == "") {  
+        var x = isExist(a.innerText)  
+        a.setAttribute("data", x)  
+        if (x) {  
+            if (wordLeft.length == 0) {  
+                gameEnd(true)  
+            }  
+        } else {  
+            showNextFail()  
+        }  
+    }  
+}`  
+**8.** 設定鍵盤猜單字對跟錯之後的結果   
+`function isExist(e) {  
+    e = e.toUpperCase()  
+    var x = wordLeft.indexOf(e)  
+    if (x != -1) {  
+        wordLeft.splice(x, 1)   
+        typeWord(e)   
+        return true  
+    }  
+    return false  
+}`  
 **9.** Show next fail drawing   
-function 【showNextFail】  
-**10.** game result  
-`function gameEnd(e) {
-    var d = gId("result")
-    d.setAttribute("data", e)
+function 【showNextFail】    
+**10.** game result    
+`function gameEnd(e) {  
+    var d = gId("result")  
+    d.setAttribute("data", e)  
     if (e) {
-        gId("rT").innerText = "恭喜"
-        gId("rM").innerHTML = "好厲害!"
-
-    } else {
-        gId("rT").innerText = "SORRY!"
-        gId("rM").innerHTML = "The word was <br/><br/>\"" + word[select][0].toUpperCase() + "\"<br/><br/>多背書好嗎"
-    }
-    d.className = ""
-}`
-**11.** about hint!  
-**【hint】** 
-`function hint() {
-    gId("hintText").innerText = word[select][1]
-    gId("hint").style.display = "block"
-}`
-
-**【Exit hint】** 
-`function hintExit() {
-    gId("hint").style.display = "none"
-}`
-**辛苦助教了~~**
-**-------------------------------------END---------------------------------------------**
+        gId("rT").innerText = "恭喜"  
+        gId("rM").innerHTML = "好厲害!"  
+    } else {  
+        gId("rT").innerText = "SORRY!"  
+        gId("rM").innerHTML = "The word was <br/><br/>\"" + word[select][0].toUpperCase() + "\"<br/><br/>多背書好嗎"  
+    }  
+    d.className = ""  
+}`  
+**11.** about hint!    
+**【hint】**   
+`function hint() {  
+    gId("hintText").innerText = word[select][1]  
+    gId("hint").style.display = "block"  
+}`  
+**【Exit hint】**   
+`function hintExit() {  
+    gId("hint").style.display = "none"  
+}`   
+**辛苦助教了~~ **   
+**-------------------------------------END---------------------------------------------**  
