@@ -1,4 +1,4 @@
-**期末專題主題:Hangman**  
+#期末專題主題:Hangman  
 **簡介:**  
 hangman應該算是大家小時候都玩過的遊戲  
 不過因為我覺得單只有猜英文有點無聊，所以改成了關於節慶/行星/星座主題的版本  
@@ -22,7 +22,8 @@ hangman應該算是大家小時候都玩過的遊戲
 var wordLeft = []  
 var fail = 0`  
 **4.** 確定onload再執行  
-`window.onload = function() {  
+ ```js 
+ window.onload = function() {  
     gId("moveKeybord").addEventListener('touchmove', function(e) {  
         wH = window.innerHeight  
         tY = e.touches[0].clientY  
@@ -36,7 +37,7 @@ var fail = 0`
         eL.style.bottom = resY + "px"       
     }, false)  
     createTastur()  
-}`    
+} ```    
 **5.**  設定function 分別是【startgame】【newgame】【clearTastatur】跟【clearPlayer】  
 (詳細code請直接開檔案)  
 不過關於【clearPlayer】用了不錯的方式(如下舉例)  
